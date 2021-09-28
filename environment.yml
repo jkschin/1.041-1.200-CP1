@@ -1,0 +1,7 @@
+name: CP1
+
+dependencies:
+    - python==3.7.3
+    - pip:
+        - matplotlib==3.0.0
+        - pygame
