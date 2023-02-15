@@ -1,6 +1,5 @@
 from pprint import pprint
-from environment import Environment
-import pygame
+from environment import *
 import argparse
 
 if __name__ == '__main__':
@@ -13,7 +12,6 @@ if __name__ == '__main__':
     print("[INFO] Starting the simulator...")
 
     game = Environment()
-    infoObject = pygame.display.Info()
-    screen_width = infoObject.current_w
-    game.run(screen_width, args)
+    print("[INFO] Created Environment Object...")
+    game.run(args)
     print("[INFO] End of the simulation...")

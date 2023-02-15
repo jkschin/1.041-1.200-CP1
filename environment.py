@@ -1,13 +1,13 @@
 import os
-import pygame
 import matplotlib
+matplotlib.use('Agg')
 import matplotlib.backends.backend_agg as agg
 import matplotlib.pyplot as plt
+import pygame
 import random
 import time
 from car import Car
 
-matplotlib.use('PS')
 
 total_simulations = 15
 pixel_meters_ratio = 0.04
@@ -25,6 +25,10 @@ class Environment:
         pygame.display.set_caption("1.041/1.200 CP1")
         self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         self.exit = False
+        infoObject = pygame.display.Info()
+        print("[INFO] Created infoObject...")
+        self.screen_width = infoObject.current_w
+        print("[INFO] Set screen_width...")
 
     def init_graphs(self):
 
@@ -57,7 +61,8 @@ class Environment:
 
         return raw_data, size
 
-    def run(self, screen_width, args):
+    def run(self, args):
+        screen_width = self.screen_width
         # load car image for the visualization
         current_dir = os.path.dirname(os.path.abspath(__file__))
         image_path = os.path.join(current_dir, "car.png")

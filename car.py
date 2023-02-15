@@ -3,7 +3,7 @@ from pygame.math import Vector2
 import matplotlib
 import math
 
-matplotlib.use('PS')
+matplotlib.use('TkAgg')
 
 reference_position = pygame.Vector2()
 ppu = 30
